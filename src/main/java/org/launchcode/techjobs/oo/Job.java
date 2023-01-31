@@ -102,11 +102,23 @@ public  int hashCode(){
 
     @Override
     public String toString() {
-        return "Id: " + id + "\n"+
+//    if(employer.getValue().isEmpty()){
+//        getEmployer().setValue("Data not available");
+//    }
+//    if (location.getValue().isEmpty()) {
+//            getLocation().setValue("Data not available");
+//    }
+//    if(positionType.getValue().isEmpty()){
+//        getLocation().setValue("Data not available");
+//        }
+//    if(coreCompetency.getValue().isEmpty()){
+//        getCoreCompetency().setValue("Data not available");
+//        }
+        return "\nID: " + id + "\n"+
                 "Name: " + name + "\n" +
                 "Employer: " + employer + "\n"+
                 "Location: " + location +"\n"+
-                "PositionType: " + positionType +"\n"+
-                "CoreCompetency: " + coreCompetency;
+                "Position Type: " + positionType +"\n"+
+                "Core Competency: " + coreCompetency + "\n";
     }
 }

@@ -13,18 +13,25 @@ public abstract class JobField {
 
     public JobField(String value) {
         this();
+        String dna = "Data not available";
+        if(value.equals("")){
+            value=dna;
+        }
         this.value = value;
     }
     public int getId() {
         return id;
     }
     public String getValue() {return value;}
+
     public void setValue(String value) {
         this.value = value;
     }
 
     @Override
-    public String toString() {return value;}
+    public String toString() {
+        return value;
+    }
 
 
     @Override
