@@ -114,6 +114,9 @@ public  int hashCode(){
 //    if(coreCompetency.getValue().isEmpty()){
 //        getCoreCompetency().setValue("Data not available");
 //        }
+        if(name.isEmpty()){
+            setName("Data not available");
+        }
         return "\nID: " + id + "\n"+
                 "Name: " + name + "\n" +
                 "Employer: " + employer + "\n"+

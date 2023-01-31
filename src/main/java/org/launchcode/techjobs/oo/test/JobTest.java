@@ -1,5 +1,6 @@
 package org.launchcode.techjobs.oo.test;
 
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -45,27 +46,29 @@ public class JobTest {
     @Test
     public void testToStringContainsCorrectLabelsAndData(){
     Job testToString = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-    assertEquals("Id: 1\n" +
-            "Name: Product tester\n" +
+    assertEquals("\nID: "+ testToString.getId() +
+            "\nName: Product tester\n" +
             "Employer: ACME\n" +
             "Location: Desert\n" +
-            "PositionType: Quality control\n" +
-            "CoreCompetency: Persistence",testToString.toString());
+            "Position Type: Quality control\n" +
+            "Core Competency: Persistence" + "\n",testToString.toString());
 
     }
     @Test
     public void testToStringHandlesEmptyField(){
-    Job testToString = new Job("Product tester", new Employer(""), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-        assertEquals("Id: 1\n" +
-                "Name: Product tester\n" +
+    Job job2 = new Job("Product tester", new Employer(""), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        assertEquals("\nID: "+job2.getId() +
+                "\nName: Product tester\n" +
                 "Employer: Data not available\n" +
                 "Location: Desert\n" +
-                "PositionType: Quality control\n" +
-                "CoreCompetency: Persistence",testToString.toString());
+                "Position Type: Quality control\n" +
+                "Core Competency: Persistence" + "\n",job2.toString());
    }
     @Test
     public void testToStringStartsAndEndsWithNewLine() {
-
+        Job job1 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        assertEquals('\n',job1.toString().charAt(0));
+        assertEquals('\n',job1.toString().length()-1);
     }
 
 
