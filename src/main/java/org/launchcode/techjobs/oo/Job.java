@@ -99,5 +99,14 @@ public  int hashCode(){
     public int getId() {
         return id;
     }
-    
+
+    @Override
+    public String toString() {
+        return "Id: " + id + "\n"+
+                "Name: " + name + "\n" +
+                "Employer: " + employer + "\n"+
+                "Location: " + location +"\n"+
+                "PositionType: " + positionType +"\n"+
+                "CoreCompetency: " + coreCompetency;
+    }
 }
